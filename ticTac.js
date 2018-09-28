@@ -30,6 +30,11 @@ const gameStart = token => {
 	} Turn`;
 	document.querySelector('body').style.background = player[token].css;
 	box.forEach(el => (el.style.borderColor = player[token].css));
+
+	document.querySelector('.start-modal').style.display = 'none';
+
+	document.getElementById('p1').innerText = player.O.name.toUpperCase();
+	document.getElementById('p2').innerText = player.X.name.toUpperCase();
 };
 
 // Player Change
@@ -115,7 +120,9 @@ const tie = board => {
 	return board.every(el => el.every(mark => check.test(mark)));
 };
 
-// click events
+// Events
+
+//grid clicks
 
 box.forEach(el => {
 	el.addEventListener('click', event => {
@@ -139,12 +146,35 @@ box.forEach(el => {
 			document.querySelector('body').style.background =
 				data.players[outcome].win;
 			box.forEach(el => (el.style.borderColor = data.players[outcome].css));
+			
 		} else if (!gameOver(data.grid) && tie(data.grid)) {
 			document.getElementById('turn').textContent = 'TIE';
-            document.querySelector('body').style.background = 'white';
-            box.forEach(el => (el.style.borderColor = 'white'))
+			document.querySelector('body').style.background = 'white';
+			box.forEach(el => (el.style.borderColor = 'white'));
+			document.getElementById('turn').textContent = "IT'S A TIE"
+
 		}
 	});
 });
+// name change
+document.getElementById('blue').addEventListener('change', event => {
+	data.players.O.name = event.target.value;
+});
 
-gameStart(data.playerToken);
+document.getElementById('red').addEventListener('change', event => {
+	data.players.X.name = event.target.value;
+});
+// game start
+document.getElementById('start-button').addEventListener('click', () => {
+	if (
+		document.getElementById('blue').value.length > 0 &&
+		document.getElementById('red').value.length > 0
+	) {
+		gameStart(data.playerToken);
+	}
+});
+// game reset
+document.getElementById('reset-button').addEventListener('click', () => {
+	resetGrid();
+	gameStart(data.playerToken);
+});

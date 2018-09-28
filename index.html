@@ -13,6 +13,20 @@
 </head>
 
 <body>
+    <div class="start-modal">
+        <div class="start">
+            <div>
+                <h2>Player Blue</h2>
+                <input type="text" id="blue" required>
+            </div>
+            <button id="start-button">START</button>
+            <div>
+                <h2>Player Red</h2>
+                <input type="text" id="red" required>
+            </div>
+        </div>
+    </div>
+
     <div class="player-turn">
         <h1 id="turn">Player One Turn</h1>
     </div>
@@ -20,17 +34,17 @@
     <div class="main">
         <div class="player">
             <h2>Player Blue</h2>
-            <h3 id="p1">koyata</h3>
+            <h3 id="p1"></h3>
         </div>
-       
+
         <div class="tic-tac">
             <div class="board">
 
                 <div class="box" id="1" data-row="0" data-column="0">
-                    
+
                 </div>
                 <div class="box" id="2" data-row="0" data-column="1">
-                    
+
                 </div>
                 <div class="box" id="3" data-row="0" data-column="2">
 
@@ -64,10 +78,10 @@
             </div>
         </div>
         <div class="player">
-                <h2>Player Red</h2>
-                <h3 id="p1">nigel</h3>
-            </div>
-    
+            <h2>Player Red</h2>
+            <h3 id="p2"></h3>
+        </div>
+
     </div>
     <script src="ticTac.js"></script>
 </body>
