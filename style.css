@@ -11,7 +11,7 @@ body {
 /* hidden start */
 
 .start-modal {
-	display: show; 
+	visibility: visible; 
     position: fixed; 
     z-index: 1;
     left: 0;
@@ -57,6 +57,24 @@ input {
 .player-turn {
 	text-align: center;
 	margin: 50px 0;
+}
+
+#reset{
+	width: auto;
+	height: auto;
+	font-size: 2em;
+	outline: none;
+	border-radius: 2em;
+	padding: 0 10px;
+	background-color: lightgrey;
+	box-shadow: 0 3px 6px rgb(56, 56, 56)
+}
+
+
+#reset:hover {
+	background: rgba(0,0,0,0);
+	color: black;
+	box-shadow: inset 2px 4px 2px 3px rgb(56, 56, 56);
 }
 
 .main {
