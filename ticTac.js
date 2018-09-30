@@ -24,7 +24,7 @@ const data = {
 const box = document.querySelectorAll('.box');
 
 const gameStart = token => {
-	let player = data.players;
+	const player = data.players;
 	document.getElementById('turn').textContent = `Player ${
 		player[token].color
 	} Turn`;
@@ -43,7 +43,7 @@ const gameStart = token => {
 // Player Change
 
 const turnChange = token => {
-	let player = data.players;
+	const player = data.players;
 	if (token === 'X') {
 		data.playerToken = player.O.mark;
 		document.querySelector('body').style.background = player.O.css;
