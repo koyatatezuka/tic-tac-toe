@@ -54,6 +54,18 @@ input {
 	overflow: auto;
 }
 
+@media (max-width: 600px) {
+	.start {
+		flex-direction: column;
+		align-items: center;
+	}
+	.start button {
+		width: 33%;
+		margin-top: 10px ;
+		
+	}
+}
+
 /* main */
 .player-turn {
 	text-align: center;
@@ -107,4 +119,14 @@ input {
 	height: 450;
 	width: auto;
 	text-align: center;
+}
+
+@media (max-width: 750px) {
+	.box {
+		width: 90px;
+		height: 90px;
+	}
+	.player {
+		font-size: .7em;
+	}
 }
